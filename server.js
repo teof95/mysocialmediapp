@@ -16,7 +16,7 @@ app.use(express.json({extented:false}));
 // app.get('/',(req,res)=>res.send('app is working, congrats'))
 
 //routes
-// app.use('/api/posts', require('./routes/posts.js'))
+app.use('/api/posts', require('./routes/posts.js'))
 app.use('/api/users', require('./routes/users.js'))
 
 
