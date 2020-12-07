@@ -10,4 +10,4 @@ module.exports = (req, res, next) => {
     console.log(decoded);
     req.user = decoded.user;
     next();
-    }
+    };
