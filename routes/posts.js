@@ -231,4 +231,106 @@ router.post("/",
       });
 
 
+      router.delete("/delete_post/:post_id", authentication,
+      async (req, res) => {
+        try {
+          let post = await Post.findById(req.params.post_id);
+      
+          if (!post) return res.status(404).json("Post not found");
+      
+          if (post.user.toString() !== req.user.id.toString())
+            return res.status(401).json("You are not allowed to do that!");
+      
+          await post.remove();
+      
+          res.json("Post is removed!");
+        } catch (error) {
+          console.error(error);
+          return res.status(500).json("Server Error...");
+        }
+      });
+
+
+
+      router.delete("/remove_hate_from_post/:post_id/:hate_id", authentication, 
+      async (req, res) => {
+        try {
+          let post = await Post.findById(req.params.post_id);
+      
+          if (!post) return res.status(404).json("Post not found");
+      
+          const removeHateFromPost = post.hates.filter(
+            (hate) => hate.id.toString() !== req.params.hate_id.toString()
+          );
+      
+          post.hates = removeHateFromPost;
+      
+          await post.save();
+      
+          res.json(post);
+        } catch (error) {
+          console.error(error);
+          return res.status(500).json("Server Error...");
+        }
+      }
+      );
+
+
+      router.delete("/remove_comment/:post_id/:comment_id", authentication,
+      async (req, res) => {
+        try {
+          let post = await Post.findById(req.params.post_id);
+      
+          if (!post) return res.status(404).json("Post not found");
+      
+          const removeCommentFromComments = post.comments.filter(
+            (comment) => comment._id.toString() !== req.params.comment_id
+          );
+      
+          post.comments = removeCommentFromComments;
+      
+          await post.save();
+      
+          res.json(post);
+        } catch (error) {
+          console.error(error);
+          return res.status(500).json("Server Error...");
+        }
+      });
+
+
+
+      router.delete("/remove_hate_from_comment/:post_id/:comment_id/:hate_id", authentication,
+        async (req, res) => {
+            try {
+              let post = await Post.findById(req.params.post_id);
+          
+              if (!post) return res.status(404).json("Post not found");
+          
+              const comment = post.comments.find(
+                (comment) => comment._id.toString() === req.params.comment_id.toString()
+              );
+          
+              const removeHateFromComment = comment.hates.filter(
+                (hate) => hate._id.toString() !== req.params.hate_id.toString()
+              );
+          
+              comment.hates = removeHateFromComment;
+          
+              await post.save();
+          
+              res.json(post);
+            } catch (error) {
+              console.error(error);
+              return res.status(500).json("Server Error...");
+            }
+          });
+
+
+
+
+
+
+
+
   module.exports = router;
