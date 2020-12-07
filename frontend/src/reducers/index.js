@@ -1,4 +1,10 @@
 import { combineReducers } from 'redux';
-import { combineReducers } from 'redux-devtools-extension';
+import users from "./users.reducer";
+import posts from "./posts.reducer";
+import auth from "./auth.reducer";
 
-export default combineReducers ({});
+export default combineReducers({
+  users,
+  posts,
+  auth,
+});
