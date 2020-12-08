@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
     if (user) return res.status(401).send("User has already been created");
 
     if (fetchedUserNameFromDatabase === userName)
-      return res.status(401).json("User name like is already been taken");
+      return res.status(401).json("User name is already been taken");
 
     const avatar = gravatar.url(email, {
       r: "pg",

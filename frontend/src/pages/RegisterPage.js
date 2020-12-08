@@ -1,65 +1,116 @@
 import React, { useState } from "react";
-import {registerUser} from "../actions/auth.actions";
-import {connect} from "react-redux";
+import { registerUser } from "../actions/auth.actions";
+import { connect } from "react-redux";
+import ErrorMessage from "../components/ErrorMessage";
 
+const RegisterPage = ({ registerUser, error }) => {
+  const [hasPasswordShowed, setShowPassword] = useState(false);
 
-const RegisterPage = ({registerUser}) => {
+  const [userData, setUserData] = useState({
+    name: "",
+    lastName: "",
+    userName: "",
+    email: "",
+    password: "",
+  });
 
+  const { name, lastName, userName, email, password } = userData;
 
-    const [userData, setUserData] = useState({
-        name: "",
-        lastName: "",
-        userName: "",
-        email: "",
-        password: "",
-      });
+  const onChange = (e) =>
+    setUserData({ ...userData, [e.target.name]: e.target.value });
 
-      const { name, lastName, userName, email, password } = userData;
+  return (
+    <main className="register-page-wrapper">
+      <form className="register-section">
+        <div className="inputs-wrapper">
+          <header className="register-header-wrapper">
+            <p className="font__p p__size register-header">
+              <i className="fas fa-users users-icon app_color_font"></i>
+              Register
+            </p>
+          </header>
 
+          <div className="label-wrapper">
+            <label className="label__register p__size">Name</label>
+          </div>
 
-      const onChange = (e) =>
-      setUserData({ ...userData, [e.target.name]: e.target.value });
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => onChange(e)}
+          />
 
+          <div className="label-wrapper">
+            <label className="label__register p__size">Last Name</label>
+          </div>
+          <input
+            type="text"
+            value={lastName}
+            name="lastName"
+            onChange={(e) => onChange(e)}
+          />
 
+          <div className="label-wrapper">
+            <label className="label__register p__size">Username</label>
+          </div>
+          <input
+            type="text"
+            name="userName"
+            value={userName}
+            onChange={(e) => onChange(e)}
+          />
 
-    return (
-        <div>
-            <div>
-            <label>Name</label>
-            <input  type="text" name="name" value={name} onChange={(e) => onChange(e)} />        
-            </div>
+          <div className="label-wrapper">
+            <label className="label__register p__size">E-mail</label>
+          </div>
+          <input
+            name="email"
+            value={email}
+            type="email"
+            onChange={(e) => onChange(e)}
+          />
 
-            <br/>
-            <div>
-            <label>Last Name</label>
-            <input  type="text" name="lastName" value={lastName} onChange={(e) => onChange(e)} />        
-            </div>
+          <div className="label-wrapper">
+            <label className="label__register p__size">Password</label>
+          </div>
 
-            <br/>
-            <div>
-            <label>User Name</label>
-            <input  type="text" name="userName" value={userName} onChange={(e) => onChange(e)} />        
-            </div>
+          <input
+            name="password"
+            type={hasPasswordShowed ? "text" : "password"}
+            value={password}
+            onChange={(e) => onChange(e)}
+          />
 
-            <br/>
-            <div>
-            <label>Email</label>
-            <input  type="text" name="email" value={email} onChange={(e) => onChange(e)} />        
-            </div>
+          <i
+            onClick={() => setShowPassword(!hasPasswordShowed)}
+            className={hasPasswordShowed ? "fas fa-eye" : "fas fa-eye-slash"}
+          ></i>
 
-            <br/>
-            <div>
-            <label>Password</label>
-            <input  type="text" name="password" value={password} onChange={(e) => onChange(e)} />        
-            </div>
+          <div className="label-wrapper">
+            <p className="p__size font__p password__info">
+              <i className="fas fa-user-check app_color_font"></i> Password should be between 6 and 12 letters
+            </p>
+          </div>
 
-            <br/>
-            <button onClick={() => registerUser(userData)}>
-                Submit form
-            </button>
+          {error && (error !== null || error !== "" || error !== {}) && (
+            <ErrorMessage errorMessage="Something went wrong. Please try again." />
+          )}
 
+          <div
+            className="button-wrapper app_color_background"
+            onClick={() => registerUser(userData)}
+          >
+            <p className="button-letter">Sign Up</p>
+          </div>
         </div>
-    )
-}
+      </form>
+    </main>
+  );
+};
 
-export default connect(null, {registerUser}) (RegisterPage);
+const mapStateToProps = (state) => ({
+  error: state.auth.errors,
+});
+
+export default connect(mapStateToProps, { registerUser })(RegisterPage);

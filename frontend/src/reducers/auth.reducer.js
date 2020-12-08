@@ -10,7 +10,7 @@ import {
   CHANGE_USER_DATA_FAILED,
   GET_USERS,
   SEARCH_BY_USERNAME,
-} from "../constants/auth.constants";
+} from "../constants/all.constants";
   
 const initialState = {
   token: localStorage.getItem("token"),
