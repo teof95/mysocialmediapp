@@ -9,12 +9,12 @@ const Account = ({
   auth: { name, lastName, userName, avatar, email },
   users: { profilePosts },
 }) => {
-  // useEffect(() => {
-  //   getUserPosts();}, []);
+  useEffect(() => {
+    getUserPosts();}, []);
 
-    useEffect(getUserPosts
-      ,[]
-      );
+    // useEffect(getUserPosts
+    //   ,[]
+    //   );
   return (
     <div className="account-page-wrapper">
       <div className="data">

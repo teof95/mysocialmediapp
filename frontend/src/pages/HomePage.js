@@ -17,7 +17,7 @@ const HomePage = () => {
           Because everyone loves to hate
           <ul>
             <li>Do you hate your Job?</li>
-            <li>Do you hate your Life?</li>
+            <li>Do you hate the Weather?</li>
             <li>Do you hate your Flatmates?</li>
             <li>Do you hate your Schoolmates?</li>
           </ul>

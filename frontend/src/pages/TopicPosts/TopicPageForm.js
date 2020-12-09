@@ -13,11 +13,12 @@ const TopicPageForm = ({ auth, createComment, post }) => {
         className="app_color_font font__bold font__p topics-headline"
         style={{ textAlign: "center" }}
       >
-        Create Post
+        Your comment to this Hate!
       </p>
 
       <textarea
         value={textOfTheComment}
+        placeholder="Type your comment..."
         onChange={(e) => onChange(e)}
         type="text"
       />
