@@ -40,7 +40,7 @@ let PostSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
       },
-      name: {
+      userName: {
         type: String,
         required: true,
       },

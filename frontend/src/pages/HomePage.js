@@ -1,5 +1,5 @@
 import React from "react";
-import hatebook from "../pages/images/hatebookwithfingerred.jpg.svg";
+import hatebook from "../pages/images/hatebook-words.jpg";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {

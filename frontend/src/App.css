@@ -47,7 +47,7 @@ html body .p__size {
 }
 
 html body .app_color_font {
-  color: #3cd1fd;
+  color: #f03333;
 }
 
 html body .app_color_background {
@@ -296,19 +296,24 @@ html
   body
   .dashboard-wrapper
   .image-wrapper
-  html
-  body
   .dashboard-wrapper
   .image-wrapper
   .dashboard-image {
-  width: 70%;
-  height: 70%;
+  width: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: yellow;
 }
 .landing-image {
   width: 400px;
+}
+
+.dashboard-image {
+  width: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 html body .landing-wrapper .text-wrapper,

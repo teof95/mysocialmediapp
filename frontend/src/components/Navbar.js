@@ -5,6 +5,8 @@ import { logOut } from "../actions/auth.actions";
 import NavbarLinks from "./navbar/NavbarLinks";
 import NavbarLogo from "./navbar/NavbarLogo";
 
+
+
 const Navbar = ({ logOut, auth: { isLoggedIn } }) => {
   let [isSidebar, setSidebar] = useState(false);
   return (
@@ -55,11 +57,11 @@ const Navbar = ({ logOut, auth: { isLoggedIn } }) => {
 
           <Link
             className="sidebar-link"
-            to="/add-post"
+            to="/add-hate"
             style={{ display: isSidebar && isLoggedIn ? "block" : "none" }}
             onClick={() => setSidebar(false)}
           >
-            Add question
+            Add hate!
           </Link>
 
           <Link
@@ -73,11 +75,11 @@ const Navbar = ({ logOut, auth: { isLoggedIn } }) => {
 
           <Link
             className="sidebar-link"
-            to="/dashboard"
+            to="/settings"
             onClick={() => setSidebar(false)}
             style={{ display: isSidebar && isLoggedIn ? "block" : "none" }}
           >
-            Dashboard
+            Settings
           </Link>
 
           <Link

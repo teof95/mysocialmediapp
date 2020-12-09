@@ -23,7 +23,6 @@ const initialState = {
   isLoading: false,
 };
 
-
 const auth = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
@@ -60,6 +59,7 @@ const auth = (state = initialState, action) => {
     case SEARCH_BY_USERNAME:
       return {
         ...state,
+        ...payload,
         users: [...payload],
         isLoggedIn: true,
         isAllowedToChangePassword: false,
@@ -103,6 +103,5 @@ const auth = (state = initialState, action) => {
       return state;
   }
 };
-
 
 export default auth;

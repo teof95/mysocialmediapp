@@ -10,8 +10,14 @@ import setAuthenticationToken from "./middleware/setAuthenticationToken";
 import { userLoaded } from "./actions/auth.actions";
 import IsLoggedInRoute from "./routes/IsLoggedInRoute";
 import PrivateRoute from "./routes/PrivateRoute";
-import Dashboard from "./pages/Dashboard";
+import settings from "./pages/settings";
 import ChangePassword from "./pages/ChangePassword";
+import AddPost from "./pages/AddPost";
+import Account from "./pages/Account";
+import Users from "./pages/Users";
+import UserProfile from "./pages/UserProfile.js";
+import Topics from "./pages/Topics.js";
+import TopicPage from "./pages/TopicPage";
 
 
 
@@ -34,10 +40,15 @@ const App = () => {
         <Route exact path="/"  component={HomePage}/>
         <IsLoggedInRoute path="/register"  component={RegisterPage}/>
         <IsLoggedInRoute path="/login" component={LoginPage}/>
-        <PrivateRoute path="/dashboard" exact component={Dashboard} />
+        <PrivateRoute path="/settings" exact component={settings} />
         <PrivateRoute path="/change-password" exact component={ChangePassword} />
-
-   
+        <PrivateRoute path="/add-hate" exact component={AddPost} />
+        <PrivateRoute path="/account" exact component={Account} />
+        <Route path="/users" exact component={Users} />
+        <Route path="/users/user/:user_id" exact component={UserProfile} />
+        <Route path="/topics" exact component={Topics} />
+        <Route path="/topics/topic/:topic_id" exact component={TopicPage} />
+  
       </Switch>
     </Provider>
 

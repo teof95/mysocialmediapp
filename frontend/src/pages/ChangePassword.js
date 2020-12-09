@@ -46,11 +46,11 @@ const ChangePassword = ({
         <form className="change-profile-section">
           <div className="change-password-input-wrapper">
             <label className="change-password-label p__size font__p font__bold">
-              Type your old password
+              Type your actual password
             </label>
             <input
               className="change-password-input"
-              placeholder="Type Something..."
+              placeholder="Type your password"
               type="text"
               value={firstPassword}
               name="firstPassword"
@@ -60,11 +60,11 @@ const ChangePassword = ({
 
           <div className="change-password-input-wrapper">
             <label className="change-password-label p__size font__p font__bold">
-              Type again your old password
+              Type again your actual password
             </label>
             <input
               className="change-password-input"
-              placeholder="Type Something..."
+              placeholder="re-type your password"
               type="text"
               value={secondPassword}
               name="secondPassword"
@@ -93,7 +93,7 @@ const ChangePassword = ({
         <form className="change-profile-section">
           <div className="change-password-input-wrapper">
             <label className="change-password-label p__size font__p font__bold">
-              Type your new Password
+              Type New Password
             </label>
 
             <input
@@ -123,7 +123,7 @@ const ChangePassword = ({
         <PasswordChangeMessage message="Password hasn't changed, something went wrong..." />
       )}
 
-      {isAllowedToChangePassword && !errors && isSubmitted && (
+      {isAllowedToChangePassword && !errors && !isSubmitted && (
         <PasswordChangeMessage message="Password has changed" />
       )}
     </div>

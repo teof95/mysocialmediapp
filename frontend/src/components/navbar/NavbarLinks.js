@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const NavbarLinks = ({ isLoggedIn, logOut }) => {
   return (
     <div className="nav-links">
@@ -33,23 +34,24 @@ const NavbarLinks = ({ isLoggedIn, logOut }) => {
         className="href__style__remove nav__link"
         style={{ display: isLoggedIn ? "flex" : "none" }}
       >
-        Account <i className="fas fa-address-card"></i>
+        My account <i className="fas fa-address-card"></i>
       </Link>
 
       <Link
-        to="/dashboard"
+        to="/settings"
         className="href__style__remove nav__link"
         style={{ display: isLoggedIn ? "flex" : "none" }}
       >
-        Dashboard <i className="fas fa-user"></i>
+        Settings <i className="fas fa-user"></i>
       </Link>
 
       <Link
-        to="/add-post"
+        
+        to="/add-hate"
         className="href__style__remove nav__link"
         style={{ display: isLoggedIn ? "flex" : "none" }}
       >
-        Add question <i className="fas fa-edit"></i>
+        Add hate! <i className="fas fa-edit"></i>
       </Link>
 
       <Link

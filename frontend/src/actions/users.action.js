@@ -1,13 +1,14 @@
+import axios from "axios";
+
 import { 
 GET_USER_BY_ID, 
 USER_ERROR, 
 GET_USER_POSTS,
+SEARCH_BY_USERNAME,
 GET_POST_BY_USER_ID,
 GET_USERS,
-SEARCH_BY_USERNAME
-} from "../../constants/users.constants";
+} from "../constants/all.constants";
 
-import axios from "axios";
 
 
 export const getUserById = (user_id) => async (dispatch) => {
