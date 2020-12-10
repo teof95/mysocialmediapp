@@ -26,7 +26,7 @@ const Comment = ({
 
       <div className="topic-user">
         <img src={comment.avatar} className="topic-avatar" alt="" />
-        <p className="font__p p__size">abcabc9{comment.name}</p>
+        <p className="font__p p__size">{comment.name}</p>
       </div>
 
       <div className="topic-section">
@@ -56,7 +56,7 @@ const Comment = ({
             </div>
 
             <div className="font__p font__bold p__size likes-length-item">
-              <p>abcabc17             
+              <p>             
               <img src={thumbsdown} className="thubsdown" alt="" />
               {comment.hates.length}</p>
             </div>

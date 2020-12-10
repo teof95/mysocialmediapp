@@ -27,7 +27,7 @@ const TopicPost = ({
       <Link to={`/topics/topic/${post._id}`}>
         <img src={post.avatar} className="topic-avatar" alt="" />
         </Link>
-        <p className="font__p p__size">abcabc8{post.name}</p>
+        <p className="font__p p__size">{post.name}</p>
       </div>
 
       <div className="topic-section">
@@ -69,7 +69,7 @@ const TopicPost = ({
             </div>
 
             <div className="font__p font__bold p__size likes-length-item">
-            abcabc5
+            
             <img src={thumbsdown} className="thubsdown" alt="" />
             {post.hates.length}
             </div>

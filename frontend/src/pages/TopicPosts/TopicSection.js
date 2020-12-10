@@ -11,14 +11,14 @@ const TopicSection = ({
 }) => {
   return (
     <div className="topic-wrapper">
-      asdfasdf topicsection
+      
       <div className="topic-date">
         <Moment format="HH:mm YYYY-MM-DD">{post.date}</Moment>
       </div>
 
       <div className="topic-user">
         <img src={post.avatar} className="topic-avatar" alt="" />
-        <p className="font__p p__size">abcabcabc10{post.name}</p>
+        <p className="font__p p__size">{post.name}</p>
       </div>
 
       <div className="topic-section">
@@ -44,7 +44,7 @@ const TopicSection = ({
                     : "far fa-thumbs-up"
                 }
               > </i>
-              abcabc2<img src={thumbsdown} className="thubsdown" alt="" />
+              <img src={thumbsdown} className="thubsdown" alt="" />
               {post.hates.length}
             </p>
           </div>
