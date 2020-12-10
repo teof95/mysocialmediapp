@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { removeHateFromComment } from "../../actions/post.actions";
 import { addHateToComment } from "../../actions/post.actions";
 import Spinner from "../../Spinner";
+import thumbsdown from "../../pages/images/dislike.png";
+
 
 const Comment = ({
   comment,
@@ -54,7 +56,9 @@ const Comment = ({
             </div>
 
             <div className="font__p font__bold p__size likes-length-item">
-              <p>👎 abcabc1  .{comment.hates.length}</p>
+              <p>abcabc17             
+              <img src={thumbsdown} className="thubsdown" alt="" />
+              {comment.hates.length}</p>
             </div>
           </div>
         </div>

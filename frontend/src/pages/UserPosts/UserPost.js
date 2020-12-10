@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { removePost } from "../../actions/post.actions";
 import Spinner from "../../Spinner";
 import Moment from "react-moment";
+import thumbsdown from "../../pages/images/dislike.png";
+
 
 const UserPost = ({ post, removePost, auth }) => {
   return post === null || !post ? (
@@ -23,7 +25,9 @@ const UserPost = ({ post, removePost, auth }) => {
       <div className="post__likes__comments__deleteBtn-wrapper">
         <div className="post__likes__comments__deleteBtn">
           <div className="user-post-likes">
-            <i className="far fa-thumbs-up">abcabc1👎</i> {post.hates.length}
+            <i className="far fa-thumbs-up">abcabc1</i> 
+            <img src={thumbsdown} className="thubsdown" alt="" />
+            {post.hates.length}
           </div>
           <div className="user-post-comments">
             <i className="far fa-comment">Comments : </i>

@@ -1,5 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
+import thumbsdown from "../../pages/images/dislike.png";
+
 
 const TopicSection = ({
   auth,
@@ -9,6 +11,7 @@ const TopicSection = ({
 }) => {
   return (
     <div className="topic-wrapper">
+      asdfasdf topicsection
       <div className="topic-date">
         <Moment format="HH:mm YYYY-MM-DD">{post.date}</Moment>
       </div>
@@ -41,7 +44,8 @@ const TopicSection = ({
                     : "far fa-thumbs-up"
                 }
               > </i>
-              abcabc2👎{post.hates.length}
+              abcabc2<img src={thumbsdown} className="thubsdown" alt="" />
+              {post.hates.length}
             </p>
           </div>
         </div>

@@ -4,6 +4,8 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { addHateToPost } from "../../actions//post.actions";
 import { removeHateFromTopicPost } from "../../actions/post.actions";
+import thumbsdown from "../../pages/images/dislike.png";
+
 
 const TopicPost = ({
   isTheOldest,
@@ -22,8 +24,10 @@ const TopicPost = ({
       </div>
 
       <div className="topic-user">
+      <Link to={`/topics/topic/${post._id}`}>
         <img src={post.avatar} className="topic-avatar" alt="" />
-        <p className="font__p p__size">abcabc8{post.userName}</p>
+        </Link>
+        <p className="font__p p__size">abcabc8{post.name}</p>
       </div>
 
       <div className="topic-section">
@@ -65,7 +69,9 @@ const TopicPost = ({
             </div>
 
             <div className="font__p font__bold p__size likes-length-item">
-            abcabc5👎 {post.hates.length}
+            abcabc5
+            <img src={thumbsdown} className="thubsdown" alt="" />
+            {post.hates.length}
             </div>
           </div>
 

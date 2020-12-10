@@ -5,10 +5,10 @@ const User = ({ user }) => {
   return (
     <div className="topic-wrapper">
       <div className="topic-user">
+      <Link to={`/users/user/${user._id}`}>
         <img src={user.avatar} className="topic-avatar" alt="" />
+        </Link>
         <p className="font__p p__size">abcabc12{user.userName}</p>
-
-        
       </div>
 
       <div className="topic-section">

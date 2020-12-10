@@ -49,6 +49,6 @@ app.use('/api/users', require('./routes/users.js'))
 let PORT = process.env.PORT || 5000;
 
 //method to specify on which port we want our app to e with callback function to see if method works
-app.listen(PORT, () => 
+server.listen(PORT, () => 
 console.log(`server is on port: ${PORT}`)
 );

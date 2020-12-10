@@ -5,8 +5,7 @@ import { getMostCommentedPosts } from "../actions/post.actions";
 import { getMostHatedPosts } from "../actions/post.actions";
 import { searchTopics } from "../actions/post.actions";
 import { connect } from "react-redux";
-import TopicPostsWrapper from "../components/TopicPosts/TopicPostsWrapper";
-
+import TopicPostsWrapper from "../pages/TopicPosts/TopicPostsWrapper";
 const Topics = ({
   getPosts,
   getMostRecentPosts,
@@ -182,6 +181,7 @@ const Topics = ({
           </div>
         </form>
       </header>
+      asdfasdf topics
 
       <div className="topics-wrapper">
         <TopicPostsWrapper
