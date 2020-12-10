@@ -39,7 +39,7 @@ export const createComment = (textOfTheComment, post_id) => async (
     };
     const body = JSON.stringify({ textOfTheComment });
     const res = await axios.put(
-      `http://hatebooksocial.herokuapp.com/api/posts/add_comment/${post_id}`,
+      `https://hatebooksocial.herokuapp.com/api/posts/add_comment/${post_id}`,
       body,
       config
     );
@@ -57,7 +57,7 @@ export const createComment = (textOfTheComment, post_id) => async (
 export const removeComment = (post_id, comment_id) => async (dispatch) => {
   try {
     const res = await axios.delete(
-      `http://hatebooksocial.herokuapp.com/api/posts/remove_comment/${post_id}/${comment_id}`
+      `https://hatebooksocial.herokuapp.com/api/posts/remove_comment/${post_id}/${comment_id}`
     );
     dispatch({ type: REMOVE_COMMENT, payload: res.data });
   } catch (error) {
@@ -76,7 +76,7 @@ export const removeComment = (post_id, comment_id) => async (dispatch) => {
   export const addHateToComment = (post_id, comment_id) => async (dispatch) => {
     try {
       const res = await axios.put(
-        `http://hatebooksocial.herokuapp.com/api/posts/hate_comment/${post_id}/${comment_id}`
+        `https://hatebooksocial.herokuapp.com/api/posts/hate_comment/${post_id}/${comment_id}`
       );
       dispatch({ type: HATE_COMMENT, payload: res.data });
       dispatch(getPost(post_id));
@@ -97,7 +97,7 @@ export const removeComment = (post_id, comment_id) => async (dispatch) => {
   ) => async (dispatch) => {
     try {
       const res = await axios.put(
-        `http://hatebooksocial.herokuapp.com/api/posts/hates/${post_id}`
+        `https://hatebooksocial.herokuapp.com/api/posts/hates/${post_id}`
       );
       dispatch({ type: ADD_HATE, payload: res.data });
   
@@ -122,7 +122,7 @@ export const removeComment = (post_id, comment_id) => async (dispatch) => {
   export const addHateToTopicPage = (post_id) => async (dispatch) => {
     try {
       const res = await axios.put(
-        `http://hatebooksocial.herokuapp.com/api/posts/hates/${post_id}`
+        `https://hatebooksocial.herokuapp.com/api/posts/hates/${post_id}`
       );
       dispatch({ type: ADD_HATE, payload: res.data });
       dispatch(getPost(post_id));
@@ -140,7 +140,7 @@ export const removeComment = (post_id, comment_id) => async (dispatch) => {
   ) => {
     try {
       const res = await axios.delete(
-        `http://hatebooksocial.herokuapp.com/api/posts/remove_hate_from_comment/${post_id}/${comment_id}/${hate_id}`
+        `https://hatebooksocial.herokuapp.com/api/posts/remove_hate_from_comment/${post_id}/${comment_id}/${hate_id}`
       );
       dispatch({ type: REMOVE_HATE_FROM_COMMENT, payload: res.data });
     } catch (error) {
@@ -154,7 +154,7 @@ export const removeComment = (post_id, comment_id) => async (dispatch) => {
   export const removeHateFromPost = (post_id, hate_id) => async (dispatch) => {
     try {
       const res = await axios.delete(
-        `http://hatebooksocial.herokuapp.com/api/posts/remove_hate_from_post/${post_id}/${hate_id}`
+        `https://hatebooksocial.herokuapp.com/api/posts/remove_hate_from_post/${post_id}/${hate_id}`
       );
       dispatch({ type: REMOVE_POST, payload: res.data });
       dispatch(getPost(post_id));
@@ -176,7 +176,7 @@ export const removeComment = (post_id, comment_id) => async (dispatch) => {
   ) => async (dispatch) => {
     try {
       const res = await axios.delete(
-        `http://hatebooksocial.herokuapp.com/api/posts/remove_hate_from_post/${post_id}/${hate_id}`
+        `https://hatebooksocial.herokuapp.com/api/posts/remove_hate_from_post/${post_id}/${hate_id}`
       );
       dispatch({
         type: REMOVE_HATE,
@@ -232,7 +232,7 @@ export const createPost = (textOfThePost) => async (dispatch) => {
     };
     const body = JSON.stringify({ textOfThePost });
     const res = await axios.post(
-      `http://hatebooksocial.herokuapp.com/api/posts`,
+      `https://hatebooksocial.herokuapp.com/api/posts`,
       body,
       config
     );
@@ -248,7 +248,7 @@ export const createPost = (textOfThePost) => async (dispatch) => {
 export const getMostCommentedPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      `http://hatebooksocial.herokuapp.com/api/posts/posts/the_most_commented`
+      `https://hatebooksocial.herokuapp.com/api/posts/posts/the_most_commented`
     );
     dispatch({ type: MOST_COMMENTED, payload: res.data });
   } catch (error) {
@@ -262,7 +262,7 @@ export const getMostCommentedPosts = () => async (dispatch) => {
 export const getMostHatedPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      `http://hatebooksocial.herokuapp.com/api/posts/posts/most_hated`
+      `https://hatebooksocial.herokuapp.com/api/posts/posts/most_hated`
     );
     dispatch({ type: MOST_HATED_POSTS, payload: res.data });
   } catch (error) {
@@ -276,7 +276,7 @@ export const getMostHatedPosts = () => async (dispatch) => {
 export const getMostRecentPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      `http://hatebooksocial.herokuapp.com/api/posts/posts/the_most_recent`
+      `https://hatebooksocial.herokuapp.com/api/posts/posts/the_most_recent`
     );
     dispatch({ type: THE_MOST_RECENT_POSTS, payload: res.data });
   } catch (error) {
@@ -290,7 +290,7 @@ export const getMostRecentPosts = () => async (dispatch) => {
 export const getPost = (post_id) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `http://hatebooksocial.herokuapp.com/api/posts/single_post/${post_id}`
+      `https://hatebooksocial.herokuapp.com/api/posts/single_post/${post_id}`
     );
     dispatch({ type: GET_POST, payload: res.data });
   } catch (error) {
@@ -303,7 +303,7 @@ export const getPost = (post_id) => async (dispatch) => {
 
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get(`http://hatebooksocial.herokuapp.com/api/posts/posts`);
+    const res = await axios.get(`https://hatebooksocial.herokuapp.com/api/posts/posts`);
     dispatch({ type: GET_POSTS, payload: res.data });
   } catch (error) {
     dispatch({
@@ -315,7 +315,7 @@ export const getPosts = () => async (dispatch) => {
 
 // export const getUserPosts = () => async (dispatch) => {
 //   try {
-//     const res = await axios.get(`http://hatebooksocial.herokuapp.com/api/posts/user_posts`);
+//     const res = await axios.get(`https://hatebooksocial.herokuapp.com/api/posts/user_posts`);
 //     dispatch({ type: GET_USER_POSTS, payload: res.data });
 //   } catch (error) {
 //     dispatch({
@@ -328,7 +328,7 @@ export const getPosts = () => async (dispatch) => {
 export const removePost = (post_id) => async (dispatch) => {
   try {
     const res = await axios.delete(
-      `http://hatebooksocial.herokuapp.com/api/posts/delete_post/${post_id}`
+      `https://hatebooksocial.herokuapp.com/api/posts/delete_post/${post_id}`
     );
     dispatch({ type: REMOVE_POST, payload: res.data });
     dispatch(getUserPosts());
@@ -352,7 +352,7 @@ export const searchTopics = (searchInput) => async (dispatch) => {
     };
     const body = JSON.stringify({ searchInput });
     const res = await axios.put(
-      `http://hatebooksocial.herokuapp.com/api/posts/search_for_post`,
+      `https://hatebooksocial.herokuapp.com/api/posts/search_for_post`,
       body,
       config
     );

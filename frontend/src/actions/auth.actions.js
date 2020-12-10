@@ -18,7 +18,7 @@ export const userLoaded = () => async (dispatch) => {
     setAuthenticationToken(localStorage.getItem("token"));
   }
   try {
-    const res = await axios.get(`http://hatebooksocial.herokuapp.com/api/users`);
+    const res = await axios.get(`https://hatebooksocial.herokuapp.com/api/users`);
     dispatch({
       type: USER_IS_LOADED,
       payload: res.data,
@@ -41,7 +41,7 @@ export const changePassword = (newPassword) => async (dispatch) => {
     };
     const body = JSON.stringify({ newPassword });
     const res = await axios.put(
-      `http://hatebooksocial.herokuapp.com/api/users/change_user_password`,
+      `https://hatebooksocial.herokuapp.com/api/users/change_user_password`,
       body,
       config
     );
@@ -69,7 +69,7 @@ export const changeUserData = (changeUserData, userDataToChange) => async (
     };
     const body = JSON.stringify({ changeUserData });
     const response = await axios.put(
-      `http://hatebooksocial.herokuapp.com/api/users/change_user_data/${userDataToChange}`,
+      `https://hatebooksocial.herokuapp.com/api/users/change_user_data/${userDataToChange}`,
       body,
       config
     );
@@ -95,7 +95,7 @@ export const checkPasswords = (passwordToCheck) => async (dispatch) => {
     };
     const body = JSON.stringify({ passwordToCheck });
     const res = await axios.put(
-      `http://hatebooksocial.herokuapp.com/api/users/check_acutal_password`,
+      `https://hatebooksocial.herokuapp.com/api/users/check_acutal_password`,
       body,
       config
     );
@@ -122,7 +122,7 @@ export const loginUser = (userData) => async (dispatch) => {
     const body = JSON.stringify(userData);
 
     const response = await axios.post(
-      `http://hatebooksocial.herokuapp.com/api/users/login`,
+      `https://hatebooksocial.herokuapp.com/api/users/login`,
       body,
       config
     );
@@ -155,7 +155,7 @@ export const registerUser = (userData) => async (dispatch) => {
     const body = JSON.stringify(userData);
 
     const response = await axios.post(
-      `http://hatebooksocial.herokuapp.com/api/users/register`,
+      `https://hatebooksocial.herokuapp.com/api/users/register`,
       body,
       config
     );
