@@ -45,6 +45,17 @@ app.use('/api/posts', require('./routes/posts.js'))
 app.use('/api/users', require('./routes/users.js'))
 
 
+if (process.env.NODE_ENV === "production") {
+  // set ability to get static values from client build folder
+  // static files include all javascript and css files
+  app.use(express.static("frontend/build"));
+  // get the index.html that will be rendered on the browser
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/frontend", "build", "index.html"));
+  });
+}
+
+
 //specify the port of the app depending if heroku will run the port or it runs at local host
 let PORT = process.env.PORT || 5000;
 

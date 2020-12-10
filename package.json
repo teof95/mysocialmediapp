@@ -4,9 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
     "forever": "forever -w server.js",
-    "client": "cd frontend && npm start"    
+    "client": "cd frontend && npm start",    
+    "install-server": "npm install",
+    "init-server": "node server.js",
+    "start": "npm run install-server && npm run init-server",
+    "build-client": "npm run build --prefix frontend",
+    "install-client": "npm install --prefix frontend",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build-client"
   },
   "author": "",
   "license": "ISC",
