@@ -248,7 +248,7 @@ export const createPost = (textOfThePost) => async (dispatch) => {
 export const getMostCommentedPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      "http://hatebooksocial.herokuapp.com/api/posts/posts/the_most_commented"
+      `http://hatebooksocial.herokuapp.com/api/posts/posts/the_most_commented`
     );
     dispatch({ type: MOST_COMMENTED, payload: res.data });
   } catch (error) {
@@ -262,7 +262,7 @@ export const getMostCommentedPosts = () => async (dispatch) => {
 export const getMostHatedPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      "http://hatebooksocial.herokuapp.com/api/posts/posts/most_hated"
+      `http://hatebooksocial.herokuapp.com/api/posts/posts/most_hated`
     );
     dispatch({ type: MOST_HATED_POSTS, payload: res.data });
   } catch (error) {
@@ -276,7 +276,7 @@ export const getMostHatedPosts = () => async (dispatch) => {
 export const getMostRecentPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      "http://hatebooksocial.herokuapp.com/api/posts/posts/the_most_recent"
+      `http://hatebooksocial.herokuapp.com/api/posts/posts/the_most_recent`
     );
     dispatch({ type: THE_MOST_RECENT_POSTS, payload: res.data });
   } catch (error) {
@@ -303,7 +303,7 @@ export const getPost = (post_id) => async (dispatch) => {
 
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://hatebooksocial.herokuapp.com/api/posts/posts");
+    const res = await axios.get(`http://hatebooksocial.herokuapp.com/api/posts/posts`);
     dispatch({ type: GET_POSTS, payload: res.data });
   } catch (error) {
     dispatch({
