@@ -1,4 +1,4 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const connectToDatabase = require('./config/connectToDatabase');
@@ -6,11 +6,9 @@ const cors = require("cors");
 const http = require('http');
 
 
-const {MONGO_ATLAS, MONGO_LOCAL, NODE_ENV } = process.env;
-
-
-NODE_ENV === "development" ? connectToDatabase(MONGO_LOCAL) : connectToDatabase(MONGO_ATLAS);
-
+connectToDatabase();
+//connectToDatabase( MONGO_LOCAL || MONGO_ATLAS );
+// require('./config/connectToDatabase');
 
 //prevent cors policy warning
 app.use(cors());
@@ -21,25 +19,25 @@ app.use(express.json({extented:false}));
 //dummy function to see if the app works 
 // app.get('/',(req,res)=>res.send('app is working, congrats'))
 
-let server = http.createServer(app);
+// let server = http.createServer(app);
 
-server.on('error', error => {
-    if (error.syscall !== 'listen') { throw error }
+// server.on('error', error => {
+//     if (error.syscall !== 'listen') { throw error }
   
-    // handle specific listen errors with friendly messages
-    switch (error.code) {
-      case 'EACCES':
-        console.error(`Port ${process.env.PORT} requires elevated privileges`);
-        process.exit(1);
-        break;
-      case 'EADDRINUSE':
-        console.error(`Port ${process.env.PORT} is already in use`);
-        process.exit(1);
-        break;
-      default:
-        throw error;
-    }
-  });
+//     // handle specific listen errors with friendly messages
+//     switch (error.code) {
+//       case 'EACCES':
+//         console.error(`Port ${process.env.PORT} requires elevated privileges`);
+//         process.exit(1);
+//         break;
+//       case 'EADDRINUSE':
+//         console.error(`Port ${process.env.PORT} is already in use`);
+//         process.exit(1);
+//         break;
+//       default:
+//         throw error;
+//     }
+//   });
 
 
 
@@ -63,7 +61,7 @@ if (process.env.NODE_ENV === "production") {
 let PORT = process.env.PORT || 5000;
 
 //method to specify on which port we want our app to e with callback function to see if method works
-server.listen(PORT, () => 
+app.listen(PORT, () => 
 console.log(`server is on port: ${PORT}`)
 );
 
