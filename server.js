@@ -7,8 +7,6 @@ const http = require('http');
 
 
 connectToDatabase();
-//connectToDatabase( MONGO_LOCAL || MONGO_ATLAS );
-// require('./config/connectToDatabase');
 
 //prevent cors policy warning
 app.use(cors());

@@ -14,7 +14,7 @@ GET_USERS,
 export const getUserById = (user_id) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/users/get_user_by_id/${user_id}`
+      `https://hatebooksocial.herokuapp.com//api/users/get_user_by_id/${user_id}`
     );
     dispatch({ type: GET_USER_BY_ID, payload: res.data });
   } catch (error) {
@@ -27,7 +27,7 @@ export const getUserById = (user_id) => async (dispatch) => {
 
 export const getUserPosts = () => async (dispatch) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/posts/user_posts`);
+      const res = await axios.get(`https://hatebooksocial.herokuapp.com//api/posts/user_posts`);
       dispatch({ type: GET_USER_POSTS, payload: res.data });
     } catch (error) {
       dispatch({
@@ -40,7 +40,7 @@ export const getUserPosts = () => async (dispatch) => {
   export const getUserPostsById = (user_id) => async (dispatch) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/posts/user_posts/${user_id}`
+        `https://hatebooksocial.herokuapp.com//api/posts/user_posts/${user_id}`
       );
       dispatch({ type: GET_POST_BY_USER_ID, payload: res.data });
     } catch (error) {
@@ -53,7 +53,7 @@ export const getUserPosts = () => async (dispatch) => {
 
   export const getUsers = () => async (dispatch) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/users/users`);
+      const res = await axios.get(`https://hatebooksocial.herokuapp.com//api/users/users`);
       dispatch({ type: GET_USERS, payload: res.data });
     } catch (error) {
       dispatch({
@@ -72,7 +72,7 @@ export const getUserPosts = () => async (dispatch) => {
       };
       const body = JSON.stringify({ userNameFromSearch });
       const response = await axios.put(
-        `http://localhost:5000/api/users/search_by_username`,
+        `https://hatebooksocial.herokuapp.com//api/users/search_by_username`,
         body,
         config
       );
