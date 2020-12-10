@@ -43,7 +43,7 @@ const AddPost = ({ clearPost, createPost, posts: { post } }) => {
       <li className="tip-item">
         <p className="font__p">
           <i className="fas fa-check small_margin_right"></i>
-          Do you want a revenge from that kid in the scool who bullied you?
+          Do you want a revenge from that kid in the school who bullied you?
         </p>
       </li>
 
