@@ -25,7 +25,7 @@ const UserPost = ({ post, removePost, auth }) => {
       <div className="post__likes__comments__deleteBtn-wrapper">
         <div className="post__likes__comments__deleteBtn">
           <div className="user-post-likes">
-            <i className="far fa-thumbs-up">abcabc1</i> 
+            <i className="far fa-thumbs-up"></i> 
             <img src={thumbsdown} className="thubsdown" alt="" />
             {post.hates.length}
           </div>

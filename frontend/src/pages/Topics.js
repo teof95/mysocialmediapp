@@ -181,8 +181,7 @@ const Topics = ({
           </div>
         </form>
       </header>
-      asdfasdf topics
-
+      
       <div className="topics-wrapper">
         <TopicPostsWrapper
           isTheOldest={isTheOldest}

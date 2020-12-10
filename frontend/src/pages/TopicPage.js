@@ -37,7 +37,7 @@ const TopicPage = ({
         removeHateFromPost={removeHateFromPost}
         addHateToTopicPage={addHateToTopicPage}
       />
-      asdfasdf topicpage
+      
 
       <div className="post-page-header">
         <TopicPageForm auth={auth} post={post} createComment={createComment} />
@@ -45,7 +45,7 @@ const TopicPage = ({
 
       <div className="comments-align-left">
         <CommentsWrapper comments={post.comments} />
-        asdfasdf comments wrapper
+        
 
       </div>
     </div>
