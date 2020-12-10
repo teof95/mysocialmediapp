@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "forever": "forever -w server.js",
-    "client": "cd frontend && npm start",
-    "start": "node ./www.js",
-    "build": "grunt dist",
-    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
+    "client": "cd frontend && npm start"
   },
   "author": "",
   "license": "ISC",
