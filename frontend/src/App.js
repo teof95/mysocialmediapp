@@ -42,10 +42,10 @@ const App = () => {
         <PrivateRoute path="/change-password" exact component={ChangePassword} />
         <PrivateRoute path="/add-hate" exact component={AddPost} />
         <PrivateRoute path="/account" exact component={Account} />
-        <PrivateRoute path="/users" exact component={Users} />
-        <Route path="/users/user/:user_id" exact component={UserProfile} />
-        <Route path="/topics" exact component={Topics} />
-        <Route path="/topics/topic/:topic_id" exact component={TopicPage} />
+        <PrivateRoute exact path="/users" exact component={Users} />
+        <PrivateRoute exact path="/users/user/:user_id" exact component={UserProfile} />
+        <Route exact path="/topics" exact component={Topics} />
+        <Route exact path="/topics/topic/:topic_id" exact component={TopicPage} />
   
       </Switch>
     </Provider>
