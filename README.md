@@ -9,7 +9,7 @@ MongoDB, Express, React, Node, Redux, Axios, AtlasDB, Cors, Express validator, P
 ## Introduction
 
 Nowdays there are many web sites for people showing their lives and things that they like!
-In many cases, people declare their hate and dilike on different posts, users, things on social media apps. 
+In many cases, people declare their hate and dislike on different posts, users, things on social media apps. 
 So far, there is no dedicated website for people to declare their dislike, their hate or even a bad review on a certain topic.
 The topics do not have limitations. 
 
