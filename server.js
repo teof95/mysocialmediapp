@@ -4,6 +4,8 @@ const app = express();
 const connectToDatabase = require('./config/connectToDatabase');
 const cors = require("cors");
 const http = require('http');
+const path = require('path');
+
 
 
 connectToDatabase();
