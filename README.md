@@ -1,6 +1,9 @@
 ![logo_hatebook](https://hatebooksocial.herokuapp.com/static/media/hatebook-words.71c9f562.jpg)
 
 # Hatebook
+MERN Social Media Website
+
+MongoDB, Express, React, Node, Redux. Axios, AtlasDB, Cors, Express validator,
 
 ## Introduction
 
@@ -16,30 +19,20 @@ It can be your boss or your flatmates! It can be the weather conditions!
 
 ![](https://www.shareicon.net/data/128x128/2016/07/07/792197_sign_512x512.png)
 
-## Setup
+## Creation
 
-- Fork this repo
-- Clone this repo
+This project was created based on youtube tutorial that you can find here
 
 ```shell
-$ cd lab-react-ironnutrution
-$ npm install
-$ npm start
+https://www.youtube.com/playlist?list=PL9t4T-rEV6sYvqcodoQ-4fWkwBE5kGYxu
 ```
 
-## Submission
+## Limitations
 
-- Upon completion, run the following commands:
-
-  ```
-  git add .
-  git commit -m "done"
-  git push origin master
-  ```
-
-- Create Pull Request so your TAs can check up your work.
+The are few bugs in the code in the deployment and styling but is fully functional. The code is connected to the ATLAS DB and there is a flow from and to the database. 
 
 ## Instructions
+You can Register and Sign-up in the application and create posts, give your hate to different posts, short the posts and make comments. You can also see the information and the posts of other users. 
 
 ### Iteration 0 | Setup
 
